@@ -50,6 +50,26 @@ public class Owner {
         } return true;
     }
 
+    public void removeDog(Dog dog){
+        int index = findDogIndex(dog);
+        if (index >= 0){
+            Dog[] copyArray = new Dog[dogs.length - 1];
+            System.arraycopy(dogs, 0, copyArray, 0, index);
+            System.arraycopy(dogs, index + 1, copyArray, index, dogs.length - index - 1);
+            dogs = copyArray;
+            if (dog.getOwner() != null){
+                dog.removeOwner();
+            }
+        }
+    }
+
+    public int findDogIndex(Dog dog) {
+        for (int i = 0; i < dogs.length; i++) {
+            if (dog == dogs[i]) {
+                return i;
+            }
+        } return -1;
+    }
     //UnderTest(id="U8.5")
     public boolean ownDog(Dog dog){
         if (!checkArray(dog)){

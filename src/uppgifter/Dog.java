@@ -23,6 +23,16 @@ public class Dog {
         this.owner = owner;
     }
 
+    public void removeOwnerFromDog(Owner owner){
+        if (owner != null && !owner.checkArray(this))  {
+            owner.removeDog(this);
+        }
+    }
+
+    public void removeOwner(){
+        this.owner = null;
+    }
+
     //@UnderTest(id="U8.3")
     public boolean checkOwner(Owner owner){
         if (getOwner() == null && owner.checkArray(this)){
@@ -65,10 +75,10 @@ public class Dog {
     }
 
     public String printOwner(){
-        if (owner != null){
+        //if (owner != null){
             return ", owned by " + owner;
-        }
-        return "";
+        //}
+        //return "";
     }
 
     public String toString(){

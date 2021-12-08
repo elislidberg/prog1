@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         //AssignmentSixPointFour obj = new AssignmentSixPointFour();
         //System.out.println(obj.createDog());
-        AssignmentEightPointFour obj = new AssignmentEightPointFour();
+        AssignmentEightPointSix obj = new AssignmentEightPointSix();
 
     }
 }
