@@ -37,8 +37,12 @@ public class AssignmentEightPointSix {
         } else {
             Owner owner = dog.getOwner();
             System.out.println(dog.getOwner());
-            dog.removeOwnerFromDog(owner);
-            System.out.print(dog.getOwner());
+            System.out.println(dog.toString());
+            owner.removeDogFromOwner(dog);
+            //dog.removeOwnerFromDog(owner);
+            System.out.println(dog.getOwner());
+            System.out.println(dog.toString());
+
         }
     }
 
@@ -59,7 +63,6 @@ public class AssignmentEightPointSix {
 
     //@UnderTest(id="U8.3")
     private void enterName() {
-
         String dogInput = input.string("Enter the name of the dog");
         Dog dog = findDogName(dogInput);
         if (dog == null) {

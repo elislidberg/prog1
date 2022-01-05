@@ -26,10 +26,11 @@ public class Dog {
     public void removeOwnerFromDog(Owner owner){
         if (owner != null && !owner.checkArray(this))  {
             owner.removeDog(this);
+            removeOwner();
         }
     }
 
-    public void removeOwner(){
+    private void removeOwner(){
         this.owner = null;
     }
 

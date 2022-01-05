@@ -50,6 +50,10 @@ public class Owner {
         } return true;
     }
 
+    public void removeDogFromOwner(Dog dog){
+        dog.removeOwnerFromDog(this);
+    }
+
     public void removeDog(Dog dog){
         int index = findDogIndex(dog);
         if (index >= 0){
@@ -57,9 +61,9 @@ public class Owner {
             System.arraycopy(dogs, 0, copyArray, 0, index);
             System.arraycopy(dogs, index + 1, copyArray, index, dogs.length - index - 1);
             dogs = copyArray;
-            if (dog.getOwner() != null){
-                dog.removeOwner();
-            }
+            //if (dog.getOwner() != null){
+            //    dog.removeOwner();
+            //}
         }
     }
 
@@ -77,4 +81,9 @@ public class Owner {
         } return false;
     }
 
+    public void printOwnerArray(){
+        for (int i = 0; i< dogs.length; i++){
+            System.out.println(dogs[i]);
+        }
+    }
 }
